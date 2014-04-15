@@ -19,15 +19,15 @@ Most of the training focuses on using Git from the command line, with a reposito
 
 Some of the terms you'll hear (repeatedly) during the training session:
 
-* Git: Duh! Git is a versioning system much like SVN. It allows teams (and even solo developers) to work on the same code base in a much more organized manner. The main difference with SVN is that it's decentralized (i.e. every collection of the code is hirerchally equal.)
-* Repo: The collection of files that make up "the code."
+* **Git**: Duh! Git is a versioning system much like SVN. It allows teams (and even solo developers) to work on the same code base in a much more organized manner. The main difference with SVN is that it's decentralized (i.e. every collection of the code is hirerchally equal.)
+* **Repo**: The collection of files that make up "the code."
 * Branch: A version of your code that you can safely work on without messing up everyone else's work.
-* Master: The main branch. It can be called anything, but everyone refers to it as _master_ by convention.
-* Merge: Adding the code from one branch onto another.
-* Push: A Git command that sends your code from your local repo, to a remote repo.
-* Pull: A Git command that brings the code in a remote repo to your local repo.
-* Commit: Once you like what you coded, make it stick.
-* Clone: Make a copy of a remote repo.
+* **Master**: The main branch. It can be called anything, but everyone refers to it as _master_ by convention.
+* **Merge**: Adding the code from one branch onto another.
+* **Push**: A Git command that sends your code from your local repo, to a remote repo.
+* **Pull**: A Git command that brings the code in a remote repo to your local repo.
+* **Commit**: Once you like what you coded, make it stick.
+* **Clone**: Make a copy of a remote repo.
 
 There are many more terms, but you'll sure hear this ones a lot.
 
@@ -38,8 +38,18 @@ In the future you'll likely create repos for your own projects on Github, but fo
 Open a terminal and issue the following commands
 
 ```bash
-git clone 
+git clone git@github.com:nicdev/git-training.git
+cd git-training 
+ls
 ```
+
+The first command copies the repo from Github into your local machine, the rest is just navigating to the local directory and viewing the files.
+
+[insert screenshot of directory here]
+
+
+
+
 
 
 
