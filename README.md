@@ -151,6 +151,22 @@ git pull origin master
 
 What you are doing here is bringing in the code from the remote _master_ branch into your own.
 
+If something fails to automatically merge, you will be notified
+
+![oops!](http://f.cl.ly/items/2C0U0i2x1i3c0E212I0S/Image%202014-04-15%20at%206.54.22%20PM.png)
+
+This can be frustrating, but Git makes it very clear where to find the conflicts. In this case, the same part of `index.html` was changed so Git isn't sure which one to use. The conflicted file looks like this
+
+![conflicted code](http://f.cl.ly/items/0h0U381L0x2A431q2A08/Image%202014-04-15%20at%206.58.23%20PM.png)
+
+The code immediately following `HEAD` is our local code, the code between `========` and `657510f14da0d146da3e00299d59be9a7a5c24ac` is what we pulled from `master`
+
+`HEAD` refers to your working state, `657510f14da0d146da3e00299d59be9a7a5c24ac` is a unique identifier for the commit you tried to merge in. 
+
+To fix this, we can manually edit the code, or use a diff tool. In this case, I'm just going to fix it up manually.
+
+
+
 
 
 
