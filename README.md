@@ -163,9 +163,39 @@ The code immediately following `HEAD` is our local code, the code between `=====
 
 `HEAD` refers to your working state, `657510f14da0d146da3e00299d59be9a7a5c24ac` is a unique identifier for the commit you tried to merge in. 
 
-To fix this, we can manually edit the code, or use a diff tool. In this case, I'm just going to fix it up manually.
+To fix this, we can manually edit the code, or use a diff tool. In this case, I'm just going to fix it up manually. The code now looks like this:
 
+![nailed it](http://f.cl.ly/items/1T0X141q3m2R361U3Y1l/Image%202014-04-15%20at%207.04.59%20PM.png)
 
+Go through the add/commit motions
+
+```bash
+git add .
+git commit -m "all fixed up"
+```
+
+Now when I pull from the remote `master` Git already knows which way it should merge.
+
+```bash
+git pull origin master
+git push origin name-your-branch
+```
+
+When you do the pull request you know it will get an all green because you've already merged the latest from `master`
+
+![all good in the hood](http://f.cl.ly/items/3n1m1Z0q1w1R3K2l1D3z/Image%202014-04-15%20at%207.31.01%20PM.png)
+
+### Sum It Up
+
+We just covered the basics that will get you up and running with Git. Let's do a recap.
+
+* Branch out and work on your code
+* Pull the latest from _master_ (or the main branch you're working against.)
+* Push your own branch up to Github
+* Submit a pull request
+* Accept the pull request
+
+ 
 
 
 
