@@ -132,6 +132,24 @@ If there are conflicts, you'll see this instead (I'll show you how to fix that l
 
 This may seem like a lot of effort for getting the code merged, but it helps keep conflicts at bay and once you get used to it, it's actually very quick.
 
+### Doing it Right
+
+In the previous step we just sent in the pull request and hoped for the best. The right way to go about it would be to make sure you don't have any conflicts before sending the request. 
+
+Jump back on the terminal, then make some more changes to any of the files, create new files. Go nuts! Once you are done, go through the add/commit process.
+
+```bash
+git add .
+git commit -m "Informative message here"
+```
+
+Now, before you push it up, make sure your code can merge properly with _master_.
+
+```bash
+git pull origin master
+```
+
+What you are doing here is bringing in the code from the remote _master_ branch into your own.
 
 
 
