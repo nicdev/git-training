@@ -1,6 +1,6 @@
 # Git Training @ 352 Media
 
-### Before you start the training
+## Before you start the training
 
 
 * Sign up for an account at [Github](https://github.com/) and send the username to [nrosental@352media.com](mailto:nrosental@352media.com)
@@ -9,14 +9,14 @@
 * (optional) Install Github app for [Mac](https://mac.github.com/) or [Windows](https://windows.github.com/)
 * (optional) go through the [Try Git course](http://try.github.io/levels/1/challenges/1)
 
-### A few words before we start
+## A few words before we start
 
 This training assumes you have a Mac computer. If you don't, it'll still be useful but you'll need to make adjustments.
 
 Most of the training focuses on using Git from the command line, with a repository on Github. We'll also cover some GUI options, but the intention is for you to learn the basics of the CLI.
 
 
-### Terms
+## Terms
 
 Some of the terms you'll hear (repeatedly) during the training session:
 
@@ -32,6 +32,8 @@ Some of the terms you'll hear (repeatedly) during the training session:
 * **Clone**: Make a copy of a remote repo.
 
 There are many more terms, but you'll sure hear this ones a lot.
+
+## Part I - Working with the CLI
 
 ### Let's Get a Repo
 
@@ -195,7 +197,183 @@ We just covered the basics that will get you up and running with Git. Let's do a
 * Submit a pull request
 * Accept the pull request
 
- 
+## Part Deux - Ze GUI
+
+Let's look at [Github for Mac](https://mac.github.com/).
+
+After it's installed, you will see all the organizations you are part of, a list of available remote repos, and a shortcut to the local repos you've added to the app.
+
+![github app](http://f.cl.ly/items/3z2Q0k1c3z1R100B0G0b/Image%202014-04-15%20at%207.46.07%20PM.png)
+
+Add the local repo we've been working on
+
+![add a repo](http://f.cl.ly/items/3k3E3l141n2h2X2m1S1o/Image%202014-04-15%20at%207.48.32%20PM.png)
+
+### Creating a New Branch
+
+![new branch](http://f.cl.ly/items/0k302p0B1f1z1t1d2C0P/Image%202014-04-15%20at%207.57.21%20PM.png)
+
+### Pushing to Remote
+
+Clicking **publish** is the equivalent of pushing the branch to the remote repo.
+
+![push it](http://f.cl.ly/items/1y443S2G333g3C1A2b0X/Image%202014-04-15%20at%207.58.56%20PM.png)
+
+Now that it's been published (pushed) let's make some code changes. Once you are done changing the code, hop back on the app and look at the "Changes" section.
+
+![commit](http://f.cl.ly/items/1I1C342p333R0P021C18/Image%202014-04-15%20at%208.04.01%20PM.png)
+
+### Committing Changes
+
+Click the commit button so your changes "stick." **You should commit often**. There's always a way of rolling back, and the more commits you have the easier it is to roll back to a desired state should something go wrong.
+
+Once done, click on the "sync" button. That will push your branch up. If it's already been pushed, it'll push the changes to its remote counterpart.
+
+![more commits](http://f.cl.ly/items/1E1n0S2z0L0z2R1A3O1p/Image%202014-04-15%20at%208.09.19%20PM.png)
+
+### GUI or CLI, Everyone Requests
+
+Ultimately go back to Github and submit a pull request.
+
+![pull request](http://f.cl.ly/items/2v3O0v390q1j0j2M2o1M/Image%202014-04-15%20at%208.14.13%20PM.png)
+
+## Extras
+
+### Ignore
+
+A small but extremely necessary feature is the `.gitignore` file. This file tells Git to not add certain files to your repo. Let's try it out.
+
+Create a file in the root directory and call it `whatsup.people`
+
+Open the `.gitignore` file and add a line that `*.people`. This will ignore all files with the extension `.people`. 
+
+![proof](http://f.cl.ly/items/2s0D222u3S0Y1x3V3a0g/Image%202014-04-15%20at%208.32.55%20PM.png)
+
+### Delete
+
+Once you are done with a branch, whether its code has been committed to another branch, or you are done experimenting, you should delete it.
+
+Delete local
+
+`git branch -D old-branch`
+
+Delete remote (notice the `:` in front of the branch name)
+
+`git push :old-branch`
+
+The branch command can also be used to see what branches you currently have, and which one you are currently using.
+
+`git branch`
+
+### Save a Step
+
+You can add and commit in one command
+
+`git commit -am "I'm committing in one step"`
+
+### Halp!
+
+You can learn more about all git commands by issuing a `help` call.
+
+```bash
+git help 
+git help commit 
+git help merge
+git help add
+...
+```
+
+The end all, be all resource for Git [Git SCM](http://git-scm.com/) 
+
+And of course the usual Google -> Stack Overflow path.
+
+#[NOTE TO REVIEWERS: THIS IS WHERE I NEED YOUR INPUT THE MOST]
+
+## Part III - How We Do Git
+
+There are many established workflows when it comes to Git. We will be using what's known as the [Feature Branch Workflow](https://www.atlassian.com/git/workflows#!workflow-feature-branch).
+
+### Branch Naming Convention
+
+The standard naming convention we'll use is as follows:
+[story type]-[task number]-[descriptive name]. For our example we'll use _bug-12345-logo-alignment_
+
+* Story types can be _bug, feature_, _refactor_ or _test_.
+* Task number is the particular task you're working on as assigned in TFS.
+* Keep the description short but descriptive.
+* Use dashes as separators.
+
+### Important Branches
+
+There are two permanent branches that should be treated with the utmost care: _master_ and _staging_. The former is the code that is in production, the latter is the code for the current sprint.
+
+### Version Numbers
+
+We need to define the current major version number, but since the product is still in beta, I suggest we use 0.x. Once we get our of beta we can start the 1.x and upgrade as needed.
+The minor version should be the sprint number. So for example, the current release should be 0.16 (beta major, sprint #16)
+
+### Rules of the Road
+
+* Never push directly to master
+* Solve your conflicts locally
+* Use descriptive commit messages
+
+### The scenario
+
+The sprint has been set, there are a few new features and some bugs to work on. You've decided to take on backlog item #12345 which happens to be a bug.
+
+1. Make sure your code is up to date.
+
+```bash
+git checkout staging
+git pull origin staging
+```
+
+2. Start a new branch.
+
+```bash
+git checkout -b bug-12345-logo-alignment
+```
+
+3. Write code, commit it (as many times as necessary)
+
+```bash
+git add .
+git commit -m "Re-aligned logo as per inVision mockup"
+```
+...
+
+```bash
+git add .
+git commit -m "Modified LESS variables to share between footer and gheader logos"
+```
+
+4. Pull down the latest code and verify there aren't any conflicts
+
+```bash
+git pull origin staging
+git push -u origin bug-12345-logo-alignment
+```
+
+5. Submit a pull request from _bug-12345-logo-alignment_ to _staging_
+
+### Deployment Time
+
+This only applies to designated "deployers." These are the guardians of the _master_ branch and ensure that only clean builds get pushed to production.
+
+1. Send pull request from _staging_ into _master_
+2. Verify there aren't any conflicts
+3. Create a tag and push it (tags need to be explicitly pushed.)
+
+```bash
+git pull origin master
+git tag -a v0.16 -m "completed sprint #16, deployment scheduled for 4/22/14 @ 1:00pm"
+git push origin v0.16
+```
+
+4. Deploy
+5. Profit!
+
 
 
 
