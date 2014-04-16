@@ -195,7 +195,31 @@ We just covered the basics that will get you up and running with Git. Let's do a
 * Submit a pull request
 * Accept the pull request
 
- 
+### Part Deux - Ze GUI
+
+Let's look at [Github for Mac](https://mac.github.com/).
+
+After it's installed, you will see all the organizations you are part of, a list of available remote repos, and a shortcut to the local repos you've added to the app.
+
+![github app](http://f.cl.ly/items/3z2Q0k1c3z1R100B0G0b/Image%202014-04-15%20at%207.46.07%20PM.png)
+
+Add the local repo we've been working on
+
+![add a repo](http://f.cl.ly/items/3k3E3l141n2h2X2m1S1o/Image%202014-04-15%20at%207.48.32%20PM.png)
+
+### Creating a New Branch
+
+![new branch](http://f.cl.ly/items/0k302p0B1f1z1t1d2C0P/Image%202014-04-15%20at%207.57.21%20PM.png)
+
+Clicking **publish** is the equivalent of pushing the branch to the remote repo.
+
+![push it](http://f.cl.ly/items/1y443S2G333g3C1A2b0X/Image%202014-04-15%20at%207.58.56%20PM.png)
+
+Now that it's been published (pushed) let's make some code changes. Once you are done changing the code, hop back on the app and look at the "Changes" section.
+
+
+
+
 
 
 
