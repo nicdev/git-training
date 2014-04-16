@@ -49,7 +49,7 @@ ls
 
 The first command copies the repo from Github into your local machine, the rest is just navigating to the local directory and viewing the files.
 
-[insert screenshot of directory here]
+![ze dir](http://f.cl.ly/items/1L3b2y3n0n2r1e1E3o34/Image%202014-04-16%20at%2011.39.11%20AM.png)
 
 ### Branching Out
 
