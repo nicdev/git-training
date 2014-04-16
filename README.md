@@ -217,9 +217,11 @@ Clicking **publish** is the equivalent of pushing the branch to the remote repo.
 
 Now that it's been published (pushed) let's make some code changes. Once you are done changing the code, hop back on the app and look at the "Changes" section.
 
-![conmmit](http://f.cl.ly/items/1I1C342p333R0P021C18/Image%202014-04-15%20at%208.04.01%20PM.png)
+![commit](http://f.cl.ly/items/1I1C342p333R0P021C18/Image%202014-04-15%20at%208.04.01%20PM.png)
 
-Click the commit button so your changes "stick."
+Click the commit button so your changes "stick." You should commit often. There's always a way of rolling back, and the more commits you have the easier it is to roll back to a desired state should something go wrong.
+
+![more commits](http://f.cl.ly/items/1E1n0S2z0L0z2R1A3O1p/Image%202014-04-15%20at%208.09.19%20PM.png)
 
 
 
