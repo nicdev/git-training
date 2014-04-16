@@ -1,6 +1,6 @@
 # Git Training @ 352 Media
 
-### Before you start the training
+## Before you start the training
 
 
 * Sign up for an account at [Github](https://github.com/) and send the username to [nrosental@352media.com](mailto:nrosental@352media.com)
@@ -9,14 +9,14 @@
 * (optional) Install Github app for [Mac](https://mac.github.com/) or [Windows](https://windows.github.com/)
 * (optional) go through the [Try Git course](http://try.github.io/levels/1/challenges/1)
 
-### A few words before we start
+## A few words before we start
 
 This training assumes you have a Mac computer. If you don't, it'll still be useful but you'll need to make adjustments.
 
 Most of the training focuses on using Git from the command line, with a repository on Github. We'll also cover some GUI options, but the intention is for you to learn the basics of the CLI.
 
 
-### Terms
+## Terms
 
 Some of the terms you'll hear (repeatedly) during the training session:
 
@@ -32,6 +32,8 @@ Some of the terms you'll hear (repeatedly) during the training session:
 * **Clone**: Make a copy of a remote repo.
 
 There are many more terms, but you'll sure hear this ones a lot.
+
+## Part I - Working with the CLI
 
 ### Let's Get a Repo
 
@@ -195,10 +197,55 @@ We just covered the basics that will get you up and running with Git. Let's do a
 * Submit a pull request
 * Accept the pull request
 
- 
+## Part Deux - Ze GUI
 
+Let's look at [Github for Mac](https://mac.github.com/).
 
+After it's installed, you will see all the organizations you are part of, a list of available remote repos, and a shortcut to the local repos you've added to the app.
 
+![github app](http://f.cl.ly/items/3z2Q0k1c3z1R100B0G0b/Image%202014-04-15%20at%207.46.07%20PM.png)
+
+Add the local repo we've been working on
+
+![add a repo](http://f.cl.ly/items/3k3E3l141n2h2X2m1S1o/Image%202014-04-15%20at%207.48.32%20PM.png)
+
+### Creating a New Branch
+
+![new branch](http://f.cl.ly/items/0k302p0B1f1z1t1d2C0P/Image%202014-04-15%20at%207.57.21%20PM.png)
+
+### Pushing to Remote
+
+Clicking **publish** is the equivalent of pushing the branch to the remote repo.
+
+![push it](http://f.cl.ly/items/1y443S2G333g3C1A2b0X/Image%202014-04-15%20at%207.58.56%20PM.png)
+
+Now that it's been published (pushed) let's make some code changes. Once you are done changing the code, hop back on the app and look at the "Changes" section.
+
+![commit](http://f.cl.ly/items/1I1C342p333R0P021C18/Image%202014-04-15%20at%208.04.01%20PM.png)
+
+### Committing Changes
+
+Click the commit button so your changes "stick." **You should commit often**. There's always a way of rolling back, and the more commits you have the easier it is to roll back to a desired state should something go wrong.
+
+Once done, click on the "sync" button. That will push your branch up. If it's already been pushed, it'll push the changes to its remote counterpart.
+
+![more commits](http://f.cl.ly/items/1E1n0S2z0L0z2R1A3O1p/Image%202014-04-15%20at%208.09.19%20PM.png)
+
+### GUI or CLI, Everyone Requests
+
+Ultimately go back to Github and submit a pull request.
+
+![pull request](http://f.cl.ly/items/2v3O0v390q1j0j2M2o1M/Image%202014-04-15%20at%208.14.13%20PM.png)
+
+## Extras
+
+### Ignore
+
+A small but extremely necessary feature is the `.gitignore` file. This file tells Git to not add certain files to your repo. Let's try it out.
+
+Create a file in the root directory and call it `whatsup.people`
+
+Open the `.gitignore` file and add a line that `*.people`. This will ignore all files with the extension `.people`.
 
 
 
