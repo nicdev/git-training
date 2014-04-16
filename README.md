@@ -217,6 +217,10 @@ Clicking **publish** is the equivalent of pushing the branch to the remote repo.
 
 Now that it's been published (pushed) let's make some code changes. Once you are done changing the code, hop back on the app and look at the "Changes" section.
 
+![conmmit](http://f.cl.ly/items/1I1C342p333R0P021C18/Image%202014-04-15%20at%208.04.01%20PM.png)
+
+Click the commit button so your changes "stick."
+
 
 
 
