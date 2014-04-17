@@ -11,9 +11,21 @@
 
 ## A few words before we start
 
-This training assumes you have a Mac computer. If you don't, it'll still be useful but you'll need to make adjustments.
+This training assumes you have a Mac computer. If you don't, it'll still be useful and you will be able to follow the command line examples.
 
 Most of the training focuses on using Git from the command line, with a repository on Github. We'll also cover some GUI options, but the intention is for you to learn the basics of the CLI.
+
+## For Windows Users Only
+
+* Download the [Git installer](http://git-scm.com/download/win)
+* Run through the installation (see the options in the screenshots below.)
+
+![git install](http://f.cl.ly/items/0B3W163v3e0v2g071N1m/Image%202014-04-17%20at%2010.19.34%20AM.png)
+![git install 2](http://f.cl.ly/items/0x0H0Y0Z2I241z1V3w2P/Image%202014-04-17%20at%2010.22.27%20AM.png)
+
+The installer comes bundled with two applications, **Git GUI** and **Git Bash**. You can use Git Bash for all the command line examples in this training document. Use Git GUI at your own risk.
+
+![git bash](http://f.cl.ly/items/3L303h0z1d1j3t0T153X/Image%202014-04-17%20at%2010.24.47%20AM.png)
 
 
 ## Terms
@@ -305,7 +317,7 @@ The standard naming convention we'll use is as follows:
 
 ### Important Branches
 
-There are two permanent branches that should be treated with the utmost care: _master_ and _staging_. The former is the code that is in production, the latter is the code for the current sprint.
+There are two permanent branches that should be treated with the utmost care: _master_ and _development_. The former is the code that is in production, the latter is the code for the current sprint.
 
 ### Version Numbers
 
@@ -325,8 +337,8 @@ The sprint has been set, there are a few new features and some bugs to work on. 
 1. Make sure your code is up to date.
 
 ```bash
-git checkout staging
-git pull origin staging
+git checkout development
+git pull origin development
 ```
 
 2. Start a new branch.
@@ -351,17 +363,17 @@ git commit -m "Modified LESS variables to share between footer and gheader logos
 4. Pull down the latest code and verify there aren't any conflicts
 
 ```bash
-git pull origin staging
+git pull origin development
 git push -u origin bug-12345-logo-alignment
 ```
 
-5. Submit a pull request from _bug-12345-logo-alignment_ to _staging_
+5. Submit a pull request from _bug-12345-logo-alignment_ to _development_
 
 ### Deployment Time
 
 This only applies to designated "deployers." These are the guardians of the _master_ branch and ensure that only clean builds get pushed to production.
 
-1. Send pull request from _staging_ into _master_
+1. Send pull request from _development_ into _master_
 2. Verify there aren't any conflicts
 3. Create a tag and push it (tags need to be explicitly pushed.)
 
