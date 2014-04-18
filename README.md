@@ -299,8 +299,6 @@ The end all, be all resource for Git [Git SCM](http://git-scm.com/)
 
 And of course the usual Google -> Stack Overflow path.
 
-#[NOTE TO REVIEWERS: THIS IS WHERE I NEED YOUR INPUT THE MOST]
-
 ## Part III - How We Do Git
 
 There are many established workflows when it comes to Git. We will be using what's known as the [Feature Branch Workflow](https://www.atlassian.com/git/workflows#!workflow-feature-branch).
@@ -385,16 +383,3 @@ git push origin v0.16
 
 4. Deploy
 5. Profit!
-
-
-
-
-
-
-
-
-
-
-
-
-
