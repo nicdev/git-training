@@ -79,6 +79,18 @@ Holy awesomeness Batman! You just created your own branch. Now you are free to c
 
 Go ahead. Pick any text editor and make a change to `index.html`. Add a `<div></div>` or some `<h1>Hello World</h1>` or something (don't forget to save the file.)
 
+### Don't Be Afraid of Commitment
+
+Now that you did your thing, you'll want to make sure your code sticks.
+
+```bash
+git status
+git add -A .
+git commit -m "Insert a descriptive message about your code change here. Wit optional."
+```
+
+The first command is so that you see what files changes and it's not really needed to commit your code. The second command _adds_ your changes; the `-A` means ALL, the `.` is like saying "add it all from this directory on down." The third and last command is the one that actually makes the changes part of the code base.
+
 Now back to the terminal and do
 
 ```bash
@@ -92,18 +104,19 @@ git checkout name-your-branch
 ```
 
 Boom! Your changes are back.
-
-### Don't Be Afraid of Commitment
-
-Now that you did your thing, you'll want to make sure your code sticks.
+Now back to the terminal and do
 
 ```bash
-git status
-git add .
-git commit -m "Insert a descriptive message about your code change here. Wit optional."
+git checkout master
 ```
 
-The first command is so that you see what files changes and it's not really needed to commit your code. The second command _adds_ your changes; the `.` is like saying "add it all." The third and last command is the one that actually makes the changes part of the code base.
+Look at `index.html` again and **OMG!** all your changes are gone. See what I mean by no consequences? Jump back to the terminal and check out your own branch
+
+```bash
+git checkout name-your-branch
+```
+
+Boom! Your changes are back.
 
 ### Push It!
 
@@ -153,7 +166,7 @@ In the previous step we just sent in the pull request and hoped for the best. Th
 Jump back on the terminal, then make some more changes to any of the files, create new files. Go nuts! Once you are done, go through the add/commit process.
 
 ```bash
-git add .
+git add -A .
 git commit -m "Informative message here"
 ```
 
@@ -184,7 +197,7 @@ To fix this, we can manually edit the code, or use a diff tool. In this case, I'
 Go through the add/commit motions
 
 ```bash
-git add .
+git add -A .
 git commit -m "all fixed up"
 ```
 
@@ -297,6 +310,8 @@ git help add
 
 The end all, be all resource for Git [Git SCM](http://git-scm.com/) 
 
+[How to Deal With Merge Conflicts](http://css-tricks.com/deal-merge-conflicts-git/)
+
 And of course the usual Google -> Stack Overflow path.
 
 ## Part III - How We Do Git
@@ -306,9 +321,8 @@ There are many established workflows when it comes to Git. We will be using what
 ### Branch Naming Convention
 
 The standard naming convention we'll use is as follows:
-[story type]-[task number]-[descriptive name]. For our example we'll use _bug-12345-logo-alignment_
+[task number]-[descriptive name]. For our example we'll use 12345-logo-alignment_
 
-* Story types can be _bug, feature_, _refactor_ or _test_.
 * Task number is the particular task you're working on as assigned in TFS.
 * Keep the description short but descriptive.
 * Use dashes as separators.
@@ -332,48 +346,50 @@ The minor version should be the sprint number. So for example, the current relea
 
 The sprint has been set, there are a few new features and some bugs to work on. You've decided to take on backlog item #12345 which happens to be a bug.
 
-1. Make sure your code is up to date.
+1) Make sure your code is up to date.
 
 ```bash
 git checkout development
 git pull origin development
 ```
 
-2. Start a new branch.
+2) Start a new branch.
 
 ```bash
 git checkout -b bug-12345-logo-alignment
 ```
 
-3. Write code, commit it (as many times as necessary)
+3) Write code, commit it (as many times as necessary)
 
 ```bash
-git add .
+git add -A .
 git commit -m "Re-aligned logo as per inVision mockup"
 ```
 ...
 
 ```bash
-git add .
+git add -A .
 git commit -m "Modified LESS variables to share between footer and gheader logos"
 ```
 
-4. Pull down the latest code and verify there aren't any conflicts
+4) Pull down the latest code and verify there aren't any conflicts
 
 ```bash
 git pull origin development
 git push -u origin bug-12345-logo-alignment
 ```
 
-5. Submit a pull request from _bug-12345-logo-alignment_ to _development_
+5) Submit a pull request from _12345-logo-alignment_ to _development_
 
 ### Deployment Time
 
 This only applies to designated "deployers." These are the guardians of the _master_ branch and ensure that only clean builds get pushed to production.
 
-1. Send pull request from _development_ into _master_
-2. Verify there aren't any conflicts
-3. Create a tag and push it (tags need to be explicitly pushed.)
+1) Send pull request from _development_ into _master_.
+
+2) Verify there aren't any conflicts.
+
+3) Create a tag and push it (tags need to be explicitly pushed.)
 
 ```bash
 git pull origin master
@@ -381,5 +397,6 @@ git tag -a v0.16 -m "completed sprint #16, deployment scheduled for 4/22/14 @ 1:
 git push origin v0.16
 ```
 
-4. Deploy
-5. Profit!
+4) Deploy
+
+5) Profit!
